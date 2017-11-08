@@ -1,4 +1,4 @@
-# Crypto Quotron
+# Crypto Simple Moving Average Service
 Crypto Quote Microservice
 
 ## Dependencies
