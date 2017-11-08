@@ -23,9 +23,9 @@ Make sure you set the required environment variables (check Dockerfile.template 
 
     # DynamoDB Local
     export CRYPTO_DYNAMODB_URL="http://localhost:9000"
-    export ZIBBY_DYNAMODB_ENV="LOCAL"
+    export CRYPTO_DYNAMODB_ENV="LOCAL"
 
-    # Fraud Detective microservice
+    # Crypto Simple MA microservice
     export CRYPTO_HOST="0.0.0.0"
     export CRYPTO_PORT="9091"
 
