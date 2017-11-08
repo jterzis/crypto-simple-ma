@@ -30,7 +30,7 @@
 
 (defn dynamo-migrate
   "Migrate DynamoDB tables. Options:
-     dynamo-up, dynamo-down, dynamo-list "
+   dynamo-list "
   [migration]
   (mount/start #'app.service.config/config
                #'app.service.dynamodb/ddb-cred

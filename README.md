@@ -29,10 +29,8 @@ Make sure you set the required environment variables (check Dockerfile.template 
     export CRYPTO_HOST="0.0.0.0"
     export CRYPTO_PORT="9091"
 
-    # Logging and Sentry
+    # Logging 
     export CRYPTO_LOG_LEVEL="INFO"
-    export SENTRY_DSN="https://abcd1234:abcd1234@sentry.io/12345"
-    export SENTRY_LOG_LEVEL="WARN"
 
 
 ## Running tests
@@ -53,22 +51,16 @@ Create java executable packaged with all dependencies:
 
 This will create `server.jar` in `target` folder.
 
-To run locally:
+To run locally with a cryptocurrency pair:
 
-    $ java -jar target/server.jar
+    $ java -jar target/server.jar "USDT_BTC"
 
 Make sure you set the required environment variables (check Dockerfile.template for the list).
 
-## Creating DynamoDB tables
+## Listing DynamoDB tables
 
 First compile executable (read section above). Make sure you have set environment vars `CRYPTO_DYNAMODB_URL`
 (for example `http://localhost:9000`) and `CRYPTO_DYNAMODB_ENV` (`LOCAL`, `STAGE` or `PROD`). To create tables:
-
-    $ java -jar target/server.jar dynamo-up
-
-To delete tables:
-
-    $ java -jar target/server.jar dynamo-down
 
 To list all tables:
 
