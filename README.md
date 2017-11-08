@@ -66,6 +66,10 @@ To list all tables:
 
     $ java -jar target/server.jar dynamo-list
 
+## Health Checks and API testing / validation
+
+Navigate to `http://localhost:5050/index.html` after starting server.jar.
+
 ## Building and running Docker image
 
 Copy `Dockerfile.template` to `Dockerfile` and edit ENV variables for running locally, on stage or production.

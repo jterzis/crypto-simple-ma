@@ -43,5 +43,5 @@
   (if-let [arg (first args)]
     (cond
       (str/starts-with? arg "dynamo") (dynamo-migrate arg)
-      :else (do (future (-> (PoloniexQuoteApp.) (.runClient arg)))))
+      :else (do (future (-> (PoloniexQuoteApp.) (.runClient arg))) (start-app)))
     (start-app)))
