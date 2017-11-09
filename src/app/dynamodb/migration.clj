@@ -8,8 +8,8 @@
 
 (defn table-list
   "List DynamoDB tables"
-  [])
-(log/info "Tables:" (far/list-tables ddb-cred))
+  []
+  (log/info "Tables:" (far/list-tables ddb-cred)))
 
 (defn create-simple-ma-table!
   "Create simple-ma table iff it not exists

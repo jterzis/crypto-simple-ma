@@ -1,7 +1,8 @@
 (ns app.api.utils.util
   (:require [clj-time.format :as f]
             [clj-time.core :as t]
-            [clj-time.coerce :as c])
+            [clj-time.coerce :as c]
+            [clj-time.local :as l])
   (:import java.sql.Timestamp
            java.text.SimpleDateFormat
            [java.util Base64 Date TimeZone UUID]))
@@ -56,6 +57,11 @@
 
 (def custom-formatter (f/formatter :date-hour-minute-second))
 
+(defn to-long-from-now
+  "Get current UTC timestamp in ms"
+  []
+  (c/to-long (t/now)))
+
 (defn to-dte-from-long
   [ts]
   (c/from-long ts))
@@ -66,6 +72,6 @@
   Args:
   ts: clojure.lang.BigInt
   parsesr: timestamp parser"
-  [ts parser]
-  (->> (to-dte-from-long ts) (f/unparse parser)))
+  ([ts parser] (->> (to-dte-from-long (long ts)) (f/unparse parser)))
+  ([ts] (->> (to-dte-from-long (long ts)) (f/unparse custom-formatter))))
 

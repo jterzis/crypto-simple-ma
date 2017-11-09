@@ -6,7 +6,8 @@
              [config :refer [config]]
              [dynamodb :refer [ddb-cred ddb-env]]
              [http :refer [http-server]]
-             [s3 :refer [s3-config]]]
+             [s3 :refer [s3-config]]
+             [simplema :refer [calc-simple-ma-main]]]
             [clojure.string :as str]
             [clojure.tools.logging :as log]
             [mount.core :as mount]))
@@ -45,5 +46,10 @@
   (if-let [arg (first args)]
     (cond
       (str/starts-with? arg "dynamo") (dynamo-migrate arg)
-      :else (do (future (-> (PoloniexQuoteApp.) (.runClient arg))) (start-app)))
-    (start-app)))
+      :else (do
+              (println "Starting MA Calculator")
+              (future (-> (PoloniexQuoteApp.) (.runClient arg)))
+              (Thread/sleep (* 1000 10))
+              (future (calc-simple-ma-main arg))
+              (println (str "Starting Simple MA Calculator on " arg)) (start-app)))
+    ))
