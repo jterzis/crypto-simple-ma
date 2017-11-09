@@ -60,7 +60,7 @@ This will create `server.jar` in `target` folder.
 
 Save the web-socket-client to your local maven repo
 
-    $ mvn install:install-file -Dfile=./target/websocket-client-1.1.jar -DgroupId=org.johnterzis.websocket -DartifactId=websocket-client -Dversion=1.1 -Dpackaging=jar -DgeneratePom=true
+    $ mvn install:install-file -Dfile=./jar/websocket-client-1.1.jar -DgroupId=org.johnterzis.websocket -DartifactId=websocket-client -Dversion=1.1 -Dpackaging=jar -DgeneratePom=true
 
 Unpack DynamoDBLocal_lib.tar.gz and in directory where DynamoDBLocal.jar is located run the following command (note port)
 
