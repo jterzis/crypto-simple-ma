@@ -5,15 +5,15 @@
 (defn load-config
   "Set system wide configuration."
   []
-  {:http {:host (env :crypto-host)
-          :port (Integer/parseInt (env :crypto-port))}
+  {:http {:host "0.0.0.0"
+          :port (Integer/parseInt "5050")}
    :aws-s3 {:cred {:access-key (env :aws-access-key-id)
                    :secret-key (env :aws-secret-access-key)
                    :endpoint (env :aws-region)}}
    :dynamo {:cred {:access-key (env :aws-access-key-id)
                    :secret-key (env :aws-secret-access-key)
-                   :endpoint (env :crypto-dynamodb-url)}
-            :ddb-env (env :crypto-dynamodb-env)}})
+                   :endpoint "http://localhost:9000"}
+            :ddb-env "local"}})
 
 (mount/defstate config
   :start (load-config)

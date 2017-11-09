@@ -36,6 +36,8 @@
                #'app.service.dynamodb/ddb-cred
                #'app.service.dynamodb/ddb-env)
   (cond
+    (= migration "dynamo-up") (ddb/migrate-up)
+    (= migration "dynamo-down") (ddb/migrate-down)
     (= migration "dynamo-list") (ddb/table-list))
   (mount/stop))
 

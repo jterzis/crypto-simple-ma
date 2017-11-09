@@ -23,6 +23,8 @@
                  ;; Utils
                  [environ "1.1.0"]
                  [mount "0.1.10"]
+                 ;; Date conversions
+                 [clj-time "0.14.0"]
                  [ns-tracker "0.3.1"]
                  ;; Data Structures
                  [com.google.guava/guava "21.0"]
@@ -32,6 +34,7 @@
                  [com.taoensso/nippy "2.13.0"]
                  ;; WAMP Exchange Data Layer
                  [org.johnterzis.websockets/websocket-client "1.1"]
+                 [org.apache.httpcomponents/httpclient "4.5.2"]
                  ]
 
   :uberjar-name "server.jar"
