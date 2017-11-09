@@ -25,7 +25,7 @@ Run service:
 
     user=> (go)
 
-Make sure you set the required environment variables (check Dockerfile.template for the list).
+(OPTIONAL for local builds) Make sure you set the required environment variables. 
 
     # DynamoDB Local
     export CRYPTO_DYNAMODB_URL="http://localhost:9000"
@@ -44,7 +44,7 @@ To run integration and unit test:
 
     $ lein test
 
-## Compiling executable
+## (OPTIONAL) Compiling executable
 
 Download all library dependencies from Maven and/or Clojars:
 
@@ -56,7 +56,17 @@ Create java executable packaged with all dependencies:
 
 This will create `server.jar` in `target` folder.
 
-To run locally with a cryptocurrency pair:
+## To run locally with a cryptocurrency pair:
+
+Save the web-socket-client to your local maven repo
+
+    $ mvn install:install-file -Dfile=./target/websocket-client-1.1.jar -DgroupId=org.johnterzis.websocket -DartifactId=websocket-client -Dversion=1.1 -Dpackaging=jar -DgeneratePom=true
+
+Unpack DynamoDBLocal_lib.tar.gz and in directory where DynamoDBLocal.jar is located run the following command (note port)
+
+    $ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -port 9000 -sharedDb
+
+Start the service
 
     $ java -jar target/server.jar "USDT_BTC"
 
