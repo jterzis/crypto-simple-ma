@@ -1,12 +1,18 @@
 # Crypto Simple Moving Average Service
 Crypto Quote Microservice
 
-## Dependencies
+## Project Dependencies
 
 - Java SE Development Kit 8 (Oracle JDK or Azul OpenJDK)
+- Maven
 - Clojure 1.8
 - Leiningen 2.6
 - Docker 17
+
+## Requirements to run on command line
+
+- Java 8
+- Maven
 
 ## Running service through REPL
 
@@ -31,7 +37,6 @@ Make sure you set the required environment variables (check Dockerfile.template 
 
     # Logging 
     export CRYPTO_LOG_LEVEL="INFO"
-
 
 ## Running tests
 
