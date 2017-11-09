@@ -68,7 +68,7 @@ Unpack DynamoDBLocal_lib.tar.gz and in directory where DynamoDBLocal.jar is loca
 
     $ java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -port 9000 -sharedDb
 
-Start the service
+Start the service with your desired crypto ccy pair entered in underscore delimited form as below
 
     $ java -jar target/server.jar "USDT_BTC"
 
