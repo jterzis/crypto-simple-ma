@@ -72,6 +72,8 @@ Start the service with your desired crypto ccy pair entered in underscore delimi
 
     $ java -jar target/server.jar "USDT_BTC"
 
+Note that starting the service requires completing a handshake to connect with Poloniex over wss protocol. This may take up to several minutes before quotes are returned.
+
 
 ## Listing DynamoDB tables
 
