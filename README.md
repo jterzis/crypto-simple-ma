@@ -72,7 +72,6 @@ Start the service with your desired crypto ccy pair entered in underscore delimi
 
     $ java -jar target/server.jar "USDT_BTC"
 
-Make sure you set the required environment variables (check Dockerfile.template for the list).
 
 ## Listing DynamoDB tables
 
